@@ -15,34 +15,46 @@ class ViewController: UIViewController {
         
         let promise = Promise<String, Error>()
         
-//        promise
-//            .success { value in
-//                print("in promise success")
-//                print(value)
-//            }
-//            .failure { error in
-//                print("in promise failure")
-//                print(error)
-//            }
-//            .then { (v, e) -> Promise<NSNull, Error> in
-//                print("in promise then")
-//                return Promise<NSNull, Error>().resolve(value: NSNull())
-//            }.success { null in
-//                
-//            }.failure { error in
-//                print("in promise failure")
-//                print(error)
-//        }
-//        
-//        promise.resolve(value: "valud")
-        // Do any additional setup after loading the view, typically from a nib.
+        promise
+            .success { value in
+                print("in promise success")
+                print(value)
+            }
+            .failure { error in
+                print("in promise failure")
+                print(error)
+            }
+            .then { (v, e) -> Promise<NSNull, Error> in
+                print("in promise then")
+                return Promise<NSNull, Error>().resolve(value: NSNull())
+            }
+            .success { null in
+                print("in promise success 2")
+                print(null)
+            }
+            .failure { error in
+                print("in promise failure 2")
+                print(error)
+            }
+            .then { (hoge, fuga) -> Promise<Any, Any> in
+                return Promise<Any, Any>()
+            }
+            .then { (hoge, fuga) -> Promise<Any, Any> in
+                return Promise<Any, Any>()
+        }
+        
+        promise.reject(error: NSError(domain: "domain.com", code: 0, userInfo: nil))
+        
+        request(with: "https://jsonplaceholder.typicode.com/users")
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func request(with url: String) {
+        let request = URLRequest(url: URL(string: url)!)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            print(data)
+            print(response)
+        }
+        task.resume()
     }
-    
-    
 }
 
