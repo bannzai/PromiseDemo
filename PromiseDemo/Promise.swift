@@ -109,8 +109,10 @@ class Promise<V, E> {
     }
     
     private func done() {
-        handlers.forEach { $0() }
-        handlers.removeAll()
+        DispatchQueue.main.async {
+            self.handlers.forEach { $0() }
+            self.handlers.removeAll()
+        }
     }
     
 }
