@@ -10,7 +10,7 @@ import Foundation
 
 class Promise<V, E> {
     
-    enum State  {
+    indirect enum State  {
         case none
         case resolved(V)
         case failed(E)
