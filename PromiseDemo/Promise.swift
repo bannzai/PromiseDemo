@@ -10,7 +10,7 @@ import Foundation
 
 class Promise<V, E> {
     
-    indirect enum State  {
+    enum State  {
         case none
         case resolved(V)
         case failed(E)
@@ -23,7 +23,7 @@ class Promise<V, E> {
     var handlers: [(() -> Void)] = []
     var state: State = .none
     
-    @discardableResult func success(_ closure: @escaping ((V) -> Void)) -> Promise {
+    func success(_ closure: @escaping ((V) -> Void)) -> Promise {
         handlers
             .append { [weak self] _ in
                 guard let unwrappedSelf = self else {
@@ -31,8 +31,8 @@ class Promise<V, E> {
                 }
                 
                 switch unwrappedSelf.state {
-                case .resolved(let v):
-                    closure(v)
+                case .resolved(let value):
+                    closure(value)
                 default:
                     return
                 }
