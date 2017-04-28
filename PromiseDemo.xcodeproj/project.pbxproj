@@ -14,6 +14,7 @@
 		BA155C871EB2DEFB0051BD59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA155C851EB2DEFB0051BD59 /* LaunchScreen.storyboard */; };
 		BA155C921EB2DEFB0051BD59 /* PromiseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA155C911EB2DEFB0051BD59 /* PromiseDemoTests.swift */; };
 		BA155C9D1EB2DEFB0051BD59 /* PromiseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA155C9C1EB2DEFB0051BD59 /* PromiseDemoUITests.swift */; };
+		BA155CAB1EB2DF080051BD59 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA155CAA1EB2DF080051BD59 /* Promise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BA155C981EB2DEFB0051BD59 /* PromiseDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromiseDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA155C9C1EB2DEFB0051BD59 /* PromiseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseDemoUITests.swift; sourceTree = "<group>"; };
 		BA155C9E1EB2DEFB0051BD59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA155CAA1EB2DF080051BD59 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				BA155C831EB2DEFB0051BD59 /* Assets.xcassets */,
 				BA155C851EB2DEFB0051BD59 /* LaunchScreen.storyboard */,
 				BA155C881EB2DEFB0051BD59 /* Info.plist */,
+				BA155CAA1EB2DF080051BD59 /* Promise.swift */,
 			);
 			path = PromiseDemo;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				BA155C7F1EB2DEFB0051BD59 /* ViewController.swift in Sources */,
 				BA155C7D1EB2DEFB0051BD59 /* AppDelegate.swift in Sources */,
+				BA155CAB1EB2DF080051BD59 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
